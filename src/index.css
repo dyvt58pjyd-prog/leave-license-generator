@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+  }
+}
+
+.legal-font {
+  font-family: 'Lora', 'Martel', 'Times New Roman', serif;
+}
+
+.legal-heading {
+  font-family: 'Cinzel', 'Martel', 'Times New Roman', serif;
+}
+
+.devanagari-font {
+  font-family: 'Martel', 'Noto Sans Devanagari', serif;
+}
+
+/* Screen A4 Sheet Preview styling */
+.a4-sheet {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 16mm 18mm 16mm 18mm;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #cbd5e1;
+  box-sizing: border-box;
+}
+
+/* On screen: hide print-only containers */
+.print-only-document {
+  display: none;
+}
+
+/* PRINT MEDIA STYLES */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm !important;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 1. HIDE ALL SCREEN UI COMPLETELY */
+  .screen-only, 
+  .no-print, 
+  header, 
+  nav, 
+  button, 
+  input, 
+  select, 
+  textarea,
+  .modal {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 2. SHOW ONLY THE PRINT-ONLY DOCUMENT CONTAINER */
+  .print-only-document {
+    display: block !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-only-document .a4-sheet {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+  }
+
+  .avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .page-break-after {
+    break-after: page !important;
+    page-break-after: always !important;
+  }
+
+  .page-break-before {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+}

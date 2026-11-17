@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maharashtra Leave & License Agreement Generator (English / मराठी / हिंदी)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Martel:wght@400;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      window.addEventListener('error', function(event) {
+        var el = document.getElementById('global-error-banner');
+        var txt = document.getElementById('global-error-text');
+        if (el && txt) {
+          el.style.display = 'block';
+          txt.textContent = (event.error && (event.error.stack || event.error.message)) || event.message || String(event);
+        }
+      });
+      window.addEventListener('unhandledrejection', function(event) {
+        var el = document.getElementById('global-error-banner');
+        var txt = document.getElementById('global-error-text');
+        if (el && txt) {
+          el.style.display = 'block';
+          txt.textContent = 'Unhandled Promise Rejection: ' + ((event.reason && (event.reason.stack || event.reason.message)) || String(event.reason));
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-500 selection:text-white">
+    <div id="global-error-banner" style="display:none; position:fixed; top:0; left:0; right:0; z-index:999999; background:#fee2e2; border-bottom:2px solid #ef4444; padding:16px; font-family:sans-serif; color:#991b1b; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+      <div style="max-width:900px; margin:0 auto; display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <strong style="font-size:14px;">⚠️ Application Error Detected:</strong>
+          <button onclick="localStorage.clear(); sessionStorage.clear(); window.location.reload();" style="padding:4px 10px; background:#dc2626; color:#fff; border:none; border-radius:4px; font-weight:bold; cursor:pointer; font-size:12px;">Reset Storage & Reload</button>
+        </div>
+        <pre id="global-error-text" style="font-size:11px; background:#fff; padding:8px; border-radius:4px; border:1px solid #fca5a5; white-space:pre-wrap; max-height:200px; overflow:auto;"></pre>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
